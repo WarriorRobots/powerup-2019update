@@ -15,8 +15,6 @@ import frc.robot.commands.autonomous.routines.RighttoLeftScale;
 import frc.robot.commands.autonomous.routines.RighttoLeftSwitch;
 import frc.robot.commands.autonomous.routines.RighttoRightScale;
 import frc.robot.commands.autonomous.routines.RighttoRightSwitch;
-import frc.robot.commands.autonomous.routines.unfinished.MidtoLeftScale;
-import frc.robot.commands.autonomous.routines.unfinished.MidtoRightScale;
 
 /**
  * Contains methods that select the Autonomous case of the robot.
@@ -82,11 +80,11 @@ public class AutonomoSelector {
 				}
 			} else if (goToScale) {
 				if (scaleOnLeft) {
-					autoCommand = new MidtoLeftScale();
-					DriverStation.reportWarning("MidtoLeftScale, I choose you!", false);
+					autoCommand = new CrossLine();
+					DriverStation.reportWarning("MidtoLeftScale is unfinished. Crossing line.", false);
 				} else if (scaleOnRight) {
-					autoCommand = new MidtoRightScale();
-					DriverStation.reportWarning("MidtoRightScale, I choose you!", false);
+					autoCommand = new CrossLine();
+					DriverStation.reportWarning("MidtoRightScale is unfinished. Crossing line.", false);
 				}
 			}
 		} else if (atLeftPos) {
