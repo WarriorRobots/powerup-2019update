@@ -1,6 +1,7 @@
 package frc.robot.util;
 
-import java.lang.Exception;
+//TODO
+// fix exception bypass with null return
 
 /**
  * Code from Team 254, used under the MIT License.
@@ -208,9 +209,9 @@ public class SynchronousPIDF {
      * @param minimumI  minimum bound of i; should be negative
      * @param maximumI  maximum bound of i; should be positive
      */
-    public void setIzone(double minimumI, double maximumI) throws Exception {
+    public void setIzone(double minimumI, double maximumI) {
     	if (minimumI > maximumI) {
-            throw new Exception("Lower bound is greater than upper bound");
+            return;
         }
     	m_minimumI = minimumI;
     	m_maximumI = maximumI;
@@ -253,9 +254,9 @@ public class SynchronousPIDF {
      * @param maximumInput
      *            the maximum value expected from the output
      */
-    public void setInputRange(double minimumInput, double maximumInput) throws Exception {
+    public void setInputRange(double minimumInput, double maximumInput) {
         if (minimumInput > maximumInput) {
-            throw new Exception("Lower bound is greater than upper bound");
+            return;
         }
         m_minimumInput = minimumInput;
         m_maximumInput = maximumInput;
@@ -270,9 +271,9 @@ public class SynchronousPIDF {
      * @param maximumOutput
      *            the maximum value to write to the output
      */
-    public void setOutputRange(double minimumOutput, double maximumOutput) throws Exception {
+    public void setOutputRange(double minimumOutput, double maximumOutput) {
         if (minimumOutput > maximumOutput) {
-            throw new Exception("Lower bound is greater than upper bound");
+            return;
         }
         m_minimumOutput = minimumOutput;
         m_maximumOutput = maximumOutput;
