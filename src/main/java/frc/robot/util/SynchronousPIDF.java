@@ -1,6 +1,6 @@
 package frc.robot.util;
 
-import edu.wpi.first.wpilibj.util.BoundaryException;
+import java.lang.Exception;
 
 /**
  * Code from Team 254, used under the MIT License.
@@ -208,9 +208,9 @@ public class SynchronousPIDF {
      * @param minimumI  minimum bound of i; should be negative
      * @param maximumI  maximum bound of i; should be positive
      */
-    public void setIzone(double minimumI, double maximumI) {
+    public void setIzone(double minimumI, double maximumI) throws Exception {
     	if (minimumI > maximumI) {
-            throw new BoundaryException("Lower bound is greater than upper bound");
+            throw new Exception("Lower bound is greater than upper bound");
         }
     	m_minimumI = minimumI;
     	m_maximumI = maximumI;
@@ -253,9 +253,9 @@ public class SynchronousPIDF {
      * @param maximumInput
      *            the maximum value expected from the output
      */
-    public void setInputRange(double minimumInput, double maximumInput) {
+    public void setInputRange(double minimumInput, double maximumInput) throws Exception {
         if (minimumInput > maximumInput) {
-            throw new BoundaryException("Lower bound is greater than upper bound");
+            throw new Exception("Lower bound is greater than upper bound");
         }
         m_minimumInput = minimumInput;
         m_maximumInput = maximumInput;
@@ -270,9 +270,9 @@ public class SynchronousPIDF {
      * @param maximumOutput
      *            the maximum value to write to the output
      */
-    public void setOutputRange(double minimumOutput, double maximumOutput) {
+    public void setOutputRange(double minimumOutput, double maximumOutput) throws Exception {
         if (minimumOutput > maximumOutput) {
-            throw new BoundaryException("Lower bound is greater than upper bound");
+            throw new Exception("Lower bound is greater than upper bound");
         }
         m_minimumOutput = minimumOutput;
         m_maximumOutput = maximumOutput;

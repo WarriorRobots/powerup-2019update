@@ -22,6 +22,7 @@ public class DashboardHandler {
 	private static SendableChooser<AutoTarget> targetDropdown;
 	private static SendableChooser<NumberOfCubes> cubeNumberDropdown;
 	
+	@Deprecated
 	private DashboardHandler() {
 		positionDropdown = new SendableChooser<>();
 		positionDropdown.addDefault("MIDDLE", StartingPosition.MIDDLE);
