@@ -11,14 +11,11 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.CameraSubsystem;
-import frc.robot.subsystems.ClimbSubsystem;
 import frc.robot.subsystems.DrivetrainSubsystem;
 import frc.robot.subsystems.FeedSubsystem;
 import frc.robot.subsystems.PickupSubsystem;
 import frc.robot.subsystems.PneumaticSubsystem;
 import frc.robot.subsystems.ShooterSubsystem;
-import frc.robot.util.AutonomoSelector;
-import frc.robot.util.DashboardHandler;
 
 /**
  * Main class of the Robot.
@@ -31,7 +28,6 @@ public class Robot extends TimedRobot {
 	public static final FeedSubsystem feed = new FeedSubsystem();
 	public static final PneumaticSubsystem pneumatics = new PneumaticSubsystem();
 	public static final CameraSubsystem sensors = new CameraSubsystem();
-	public static final ClimbSubsystem climb = new ClimbSubsystem();
 	public static ControlHandler oi;
 	
 	
@@ -45,15 +41,12 @@ public class Robot extends TimedRobot {
 
 	@Override
 	public void disabledInit() {
-		DashboardHandler.getInstance().init();
 		Scheduler.getInstance().removeAll();
 	}
 	
 	@Override
 	public void autonomousInit() {
 		Scheduler.getInstance().removeAll();
-		AutonomoSelector.getInstance().selectAutoCase();
-		AutonomoSelector.getInstance().startAuto();
 	}
 
 	@Override
